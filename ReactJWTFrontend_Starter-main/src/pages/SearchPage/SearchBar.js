@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import TextField from "../TextField/TextField";
 
 const SearchBarForm = ({ onSearchChange, setSearchTerm, searchTerm }) => {
 
@@ -14,7 +13,7 @@ const SearchBarForm = ({ onSearchChange, setSearchTerm, searchTerm }) => {
     <form onSubmit={handleSubmit} className="flex item">
       <h4>Search</h4>
       <div className="p-2">
-        <TextField label="Search" value={searchTerm} onChange={setSearchTerm} />
+        <input type="text" label="Search" value={searchTerm} onChange={setSearchTerm} />
         <div className="d-flex justify-content-end">
           <button className="btn btn-primary" type="submit">
             Search
