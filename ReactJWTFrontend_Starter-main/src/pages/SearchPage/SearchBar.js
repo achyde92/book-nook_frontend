@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 
-const SearchBarForm = ({ onSearchChange, setSearchTerm, searchTerm }) => {
-
-  console.log("searchbarform searchterm: ",searchTerm);
-
+const SearchBar = ({ onSearchChange, setSearchTerm, searchTerm }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
-      onSearchChange(searchTerm);
+    onSearchChange(searchTerm);
   };
 
   return (
     <form onSubmit={handleSubmit} className="flex item">
       <h4>Search</h4>
       <div className="p-2">
-        <input type="text" label="Search" value={searchTerm} onChange={setSearchTerm} />
+        <input
+          type="text"
+          label="Search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
         <div className="d-flex justify-content-end">
           <button className="btn btn-primary" type="submit">
             Search
@@ -24,4 +26,4 @@ const SearchBarForm = ({ onSearchChange, setSearchTerm, searchTerm }) => {
   );
 };
 
-export default SearchBarForm;
+export default SearchBar;

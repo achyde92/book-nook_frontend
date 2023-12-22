@@ -21,6 +21,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [books, setBooks] = useState([]);
 
   const filterBooks = () => {
     const filteredBooks = books.filter(
