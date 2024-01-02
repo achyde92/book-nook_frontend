@@ -14,7 +14,10 @@ const SearchBar = ({ onSearchChange, setSearchTerm, searchTerm }) => {
           type="text"
           label="Search"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => 
+            {console.log("Input value changed:", e.target.value);
+            setSearchTerm(e.target.value);
+          }}
         />
         <div className="d-flex justify-content-end">
           <button className="btn btn-primary" type="submit">
@@ -24,6 +27,6 @@ const SearchBar = ({ onSearchChange, setSearchTerm, searchTerm }) => {
       </div>
     </form>
   );
-};
+}
 
 export default SearchBar;

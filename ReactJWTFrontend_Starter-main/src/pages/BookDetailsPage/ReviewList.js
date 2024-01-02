@@ -26,6 +26,7 @@ const ReviewList = ({ userId }) => {
         {reviews.map((review) => (
           <li key={review.id}>
             <h4>{review.title}</h4>
+            <p>{review.rating}</p>
             <p>{review.content}</p>
           </li>
         ))}

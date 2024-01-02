@@ -9,8 +9,7 @@ const ResultsList = ({ searchResults }) => {
         {searchResults.map((book) => (
           <li key={book.id}>
               <h3>{book.title}</h3>
-            <Link to={`/book-details/${book.id}`}>
-            </Link>
+            <Link to={`/book-details/${book.id}`}>{book.title}</Link>
             <p>Author: {book.author}</p>
           </li>
         ))}

@@ -12,6 +12,8 @@ const SearchPage = () => {
       const apiKey = "yourAPIKey";
       const apiUrl = "https://www.googleapis.com/books/v1/volumes?q=";
 
+      console.log("search term", searchTerm)
+
       const response = await axios.get(apiUrl + searchTerm, {
         params: {
           key: apiKey,
@@ -20,9 +22,11 @@ const SearchPage = () => {
 
       const books = response.data.items.map((book) => ({
         id: book.id,
-        title: book.volumeInfo.title,
-        author: book.volumeInfo.authors?.join(", ") || "Unknown Author",
+        title: book.title,
+        author: book.authors?.join(", ") || "Unknown Author",
       }));
+
+      console.log("books", books);
 
       setSearchResults(books);
     } catch (error) {
