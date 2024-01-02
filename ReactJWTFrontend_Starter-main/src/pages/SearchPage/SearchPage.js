@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
-import ResultsList from "./ResultsList"; // Import the ResultsList component
+import ResultsList from "./ResultsList";
 import axios from "axios";
 
 const SearchPage = () => {
@@ -42,8 +42,6 @@ const SearchPage = () => {
         setSearchTerm={setSearchTerm}
         searchTerm={searchTerm}
       />
-
-      {/* Render the ResultsList component with the searchResults */}
       <ResultsList searchResults={searchResults} />
     </div>
   );

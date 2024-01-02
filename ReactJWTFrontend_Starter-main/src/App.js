@@ -26,12 +26,13 @@ function App() {
   const filterBooks = () => {
     const filteredBooks = books.filter(
       (book) =>
-        book.title.includes(searchTerm) ||
-        book.ratiing.includes(searchTerm) ||
-        book.author.includes(searchTerm)
+        book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        book.rating.toString().includes(searchTerm.toLowerCase()) ||
+        book.author.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setBooks(filteredBooks);
   };
+  
 
   return (
     <div>
@@ -47,7 +48,7 @@ function App() {
         />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/bookdetails" element={<BookDetailsPage />} />
+        <Route path="/book-details" element={<BookDetailsPage />} />
         <Route path="/favoriteslist" element={<PrivateRoute><FavoritesPage /></PrivateRoute>} />
         <Route path="/search" element={<PrivateRoute><SearchBarPage onSearchChange ={filterBooks} setSearchTerm={setSearchTerm} searchTerm={searchTerm} /></PrivateRoute>} />
 
