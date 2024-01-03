@@ -7,9 +7,9 @@ const Book = ({ bookId, activeIndex, setActiveIndex, index }) => {
   useEffect(() => {
     const fetchBookDetails = async () => {
       try {
-        const response = await fetch(`YOUR_API_ENDPOINT/${bookId}`);
+        const response = await fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}`);
         const data = await response.json();
-        setBookDetails(data);
+        setBookDetails(data.volumeInfo);
       } catch (error) {
         console.error('Error fetching book details:', error);
       }

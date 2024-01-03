@@ -8,12 +8,12 @@ const ResultsList = ({ searchResults }) => {
       <ul>
         {searchResults.map((book) => (
           <li key={book.id}>
-            <h3>{book.volumeInfo?.title || 'Unknown Title'}</h3>
+            <h3>{book.title || 'Unknown Title'}</h3>
             <Link to={`/book-details/${book.id}`}>
-              {book.volumeInfo?.title || 'Unknown Title'}
+              {book.title || 'Unknown Title'}
             </Link>
             <p>
-              Author: {book.volumeInfo?.authors?.join(', ') || 'Unknown Author'}
+              Author: {book.authors?.join(', ') || 'Unknown Author'}
             </p>
           </li>
         ))}

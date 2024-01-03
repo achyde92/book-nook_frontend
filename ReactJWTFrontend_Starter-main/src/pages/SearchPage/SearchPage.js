@@ -15,8 +15,8 @@ const SearchPage = () => {
 
       const books = response.data.items.map((book) => ({
         id: book.id,
-        title: book.title,
-        author: book.authors?.join(", ") || "Unknown Author",
+        title: book.volumeInfo.title,
+        author: book.volumeInfo.authors?.join(", ") || "Unknown Author",
       }));
 
       setSearchResults(books);
