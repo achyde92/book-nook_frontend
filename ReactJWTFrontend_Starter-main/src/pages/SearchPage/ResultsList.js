@@ -8,9 +8,13 @@ const ResultsList = ({ searchResults }) => {
       <ul>
         {searchResults.map((book) => (
           <li key={book.id}>
-              <h3>{book.title}</h3>
-            <Link to={`/book-details/${book.id}`}>{book.title}</Link>
-            <p>Author: {book.author}</p>
+            <h3>{book.volumeInfo?.title || 'Unknown Title'}</h3>
+            <Link to={`/book-details/${book.id}`}>
+              {book.volumeInfo?.title || 'Unknown Title'}
+            </Link>
+            <p>
+              Author: {book.volumeInfo?.authors?.join(', ') || 'Unknown Author'}
+            </p>
           </li>
         ))}
       </ul>
@@ -19,6 +23,7 @@ const ResultsList = ({ searchResults }) => {
 };
 
 export default ResultsList;
+
 
 
 

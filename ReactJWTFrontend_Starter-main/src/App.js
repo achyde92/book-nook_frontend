@@ -10,7 +10,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import BookDetailsPage from "./pages/BookDetailsPage/Book";
 import FavoritesPage from "./pages/FavoritesPage/FavoritesList";
-import SearchBarPage from "./pages/SearchPage/SearchBar"
+import SearchPage from "./pages/SearchPage/SearchPage"
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -50,7 +50,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/book-details" element={<BookDetailsPage />} />
         <Route path="/favoriteslist" element={<PrivateRoute><FavoritesPage /></PrivateRoute>} />
-        <Route path="/search" element={<PrivateRoute><SearchBarPage onSearchChange ={filterBooks} setSearchTerm={setSearchTerm} searchTerm={searchTerm} /></PrivateRoute>} />
+        <Route path="/search" element={<PrivateRoute><SearchPage onSearchChange ={filterBooks} setSearchTerm={setSearchTerm} searchTerm={searchTerm} /></PrivateRoute>} />
 
       </Routes>
       <Footer />

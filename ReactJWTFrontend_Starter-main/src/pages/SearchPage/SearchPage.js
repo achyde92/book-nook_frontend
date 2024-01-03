@@ -9,16 +9,9 @@ const SearchPage = () => {
 
   const handleSearch = async () => {
     try {
-      const apiKey = "yourAPIKey";
       const apiUrl = "https://www.googleapis.com/books/v1/volumes?q=";
 
-      console.log("search term", searchTerm)
-
-      const response = await axios.get(apiUrl + searchTerm, {
-        params: {
-          key: apiKey,
-        },
-      });
+      const response = await axios.get(apiUrl + searchTerm);
 
       const books = response.data.items.map((book) => ({
         id: book.id,
@@ -26,23 +19,16 @@ const SearchPage = () => {
         author: book.authors?.join(", ") || "Unknown Author",
       }));
 
-      console.log("books", books);
-
       setSearchResults(books);
     } catch (error) {
       console.error("Error fetching search results:", error);
     }
   };
 
-  const handleSearchChange = (term) => {
-    setSearchTerm(term);
-    handleSearch();
-  };
-
   return (
     <div>
       <SearchBar
-        onSearchChange={handleSearchChange}
+        handleSearch={handleSearch}
         setSearchTerm={setSearchTerm}
         searchTerm={searchTerm}
       />
