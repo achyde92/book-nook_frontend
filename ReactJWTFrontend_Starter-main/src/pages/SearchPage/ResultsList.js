@@ -8,7 +8,6 @@ const ResultsList = ({ searchResults }) => {
       <ul>
         {searchResults.map((book) => (
           <li key={book.id}>
-            <h3>{book.title || 'Unknown Title'}</h3>
             <Link to={`/book-details/${book.id}`}>
               {book.title || 'Unknown Title'}
             </Link>

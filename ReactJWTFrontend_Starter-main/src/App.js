@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import BookDetailsPage from "./pages/BookDetailsPage/Book";
+import BookDetailsPage from "./pages/BookDetailsPage/BookDetailsPage";
 import FavoritesPage from "./pages/FavoritesPage/FavoritesList";
 import SearchPage from "./pages/SearchPage/SearchPage"
 

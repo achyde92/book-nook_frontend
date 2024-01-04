@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Book = ({ bookId, activeIndex, setActiveIndex, index }) => {
+const Book = ({ bookId }) => {
   const [bookDetails, setBookDetails] = useState(null);
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -22,15 +22,11 @@ const Book = ({ bookId, activeIndex, setActiveIndex, index }) => {
     setIsFavorite(!isFavorite);
   };
 
-  const handleActive = () => {
-    setActiveIndex(index);
-  };
-
   const btnClass = isFavorite ? 'btn btn-success' : 'btn btn-secondary';
-  const activeClass = index === activeIndex ? 'active-movie' : '';
 
   return (
-    <div onClick={handleActive} className={`book-item ${activeClass}`}>
+    <div>
+        <p>Book Component</p>
       {bookDetails && (
         <>
           <img src={bookDetails.imageURL} alt={`${bookDetails.title} thumbnail`} />
